@@ -154,10 +154,6 @@ user_data = <<-EOF
               sudo pm i cross-env -g
               # install aws cli
               sudo yum install -y aws-cli
-              sudo npm install npm -g
-              npm install express --save
-              npm install aws-sdk
-              npm install node-ec2-metadata
               EOF
 
   tags = {
