@@ -23,7 +23,6 @@ var ec2VPCTextDescription = [];
   .then(function(instanceId) {
     if(instanceId) {
       
-      //use axios? to be able to use: ec2IntanceID
       var params = {
         DryRun: false,
         //InstanceIds: ['i-094b796716a0df03c']
@@ -44,7 +43,7 @@ var ec2VPCTextDescription = [];
 
 // Describes the specified VPC.
 var params = {
-    VpcIds: ["vpc-a98784ce"]
+    VpcIds: ["vpc-0ff2b7ff79a890d8a"]
    };
 
 //Describe VPC's
@@ -57,7 +56,7 @@ ec2.describeVpcs(params, function(err, data) {
 
 app.get('/', (req, res) => {
   //res.send(ec2VPCTextDescription);
-  res.send(ec2TextDescription);
+  res.send({ec2TextDescription, ec2VPCTextDescription});
 });
 
 app.listen(port, () => {
