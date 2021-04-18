@@ -31,7 +31,7 @@ var ec2VPCTextDescription = [];
 
       //Describe Instances
       ec2.describeInstances(params, function(err, data) {
-          if (!err) {                     
+          if (!err) {      
             ec2TextDescription = data;
           }
       });
@@ -43,7 +43,7 @@ var ec2VPCTextDescription = [];
 
 // Describes the specified VPC.
 var params = {
-    VpcIds: ["vpc-0ff2b7ff79a890d8a"]
+    VpcIds: ["vpc-0f7a69654524594d5"]
    };
 
 //Describe VPC's
@@ -53,9 +53,7 @@ ec2.describeVpcs(params, function(err, data) {
     }
 });
 
-
 app.get('/', (req, res) => {
-  //res.send(ec2VPCTextDescription);
   res.send({ec2TextDescription, ec2VPCTextDescription});
 });
 
